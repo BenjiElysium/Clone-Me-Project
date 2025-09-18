@@ -64,7 +64,7 @@ export default function RootLayout({
                   href="/about"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   style={{
-                    fontSize: "var(--s0)",
+                    fontSize: "var(--s1)",
                     transitionDuration: "var(--dur-1)",
                     transitionTimingFunction: "var(--ease)",
                   }}

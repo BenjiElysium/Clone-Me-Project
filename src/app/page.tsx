@@ -105,13 +105,13 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-primary text-white shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-primary dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
             <CardHeader className="relative z-10">
               <CardTitle style={{ fontSize: "var(--s2)" }}>
                 Primary Theme
               </CardTitle>
-              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
+              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
                 Gradient backgrounds with token integration
               </CardDescription>
             </CardHeader>
@@ -142,13 +142,13 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-accent text-white shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-accent dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
             <div className="absolute inset-0 bg-black/10" />
             <CardHeader className="relative z-10">
               <CardTitle style={{ fontSize: "var(--s2)" }}>
                 Accent Theme
               </CardTitle>
-              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
+              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
                 Cool blues with smooth animations
               </CardDescription>
             </CardHeader>
@@ -194,7 +194,7 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-warm text-white shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-warm dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
             <motion.div 
               className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"
               animate={{
@@ -210,20 +210,20 @@ export default function Home() {
               <CardTitle style={{ fontSize: "var(--s2)" }}>
                 Warm Theme
               </CardTitle>
-              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
+              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
                 Energetic colors with dynamic effects
               </CardDescription>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="mb-4">
                 <motion.div 
-                  className="h-2 bg-white/30 rounded-full overflow-hidden"
+                  className="h-2 dark:bg-white/30 bg-black/30 rounded-full overflow-hidden"
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 2, delay: 0.5 }}
                 >
                   <motion.div 
-                    className="h-full bg-white rounded-full"
+                    className="h-full dark:bg-white bg-black rounded-full"
                     animate={{ x: [-20, 100, -20] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />

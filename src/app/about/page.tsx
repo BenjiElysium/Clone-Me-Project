@@ -17,8 +17,8 @@ export default function About() {
         <div className="w-full max-w-2xl">
         <Card className="shadow-token-lg bg-background/90 backdrop-blur-sm border-border/50">
           <CardHeader className="text-center">
-            <CardTitle className="text-gradient mb-4" style={{ fontSize: "var(--s5)" }}>
-              About
+            <CardTitle className="text-gradient mb-4" style={{ fontSize: "var(--s4)" }}>
+              About CloneMe
             </CardTitle>
             <CardDescription
               style={{ fontSize: "var(--s1)" }}
