@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 CloneMe Stack
 
-## Getting Started
+A modern, production-ready template for building web applications with the perfect stack combination.
 
-First, run the development server:
+## 🎯 Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** - React framework with App Router
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **TypeScript** - Type safety and developer experience
+- **Framer Motion** - Smooth animations and interactions
+- **shadcn/ui** - Beautiful, accessible component library
+- **Zod** - Runtime type validation
+- **Design Tokens** - Consistent design system
+
+## ✨ Features
+
+- 🎨 **Comprehensive Design Token System** - Colors, typography, spacing, shadows, and motion
+- 🌓 **Theme Support** - Light, dark, and system themes with smooth transitions
+- 📱 **Responsive Design** - Mobile-first approach with beautiful layouts
+- ⚡ **Performance Optimized** - Built with Next.js 15 and Tailwind v4
+- 🎭 **Rich Animations** - Framer Motion integration with token-based timing
+- 🧩 **Component Library** - Pre-built shadcn/ui components
+- 🔧 **Developer Experience** - TypeScript, ESLint, and modern tooling
+
+## 🚀 Quick Start
+
+1. **Clone and install dependencies:**
+   ```bash
+   git clone <your-repo-url>
+   cd clone-me-project
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your values
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎨 Design System
+
+The CloneMe stack includes a comprehensive design token system located in `styles/tokens.css`:
+
+- **Colors**: `--bg`, `--fg`, `--muted`, `--accent` with theme variants
+- **Typography**: Modular scale (`--s-2` through `--s7`) using Perfect Fourth ratio
+- **Motion**: Standardized easing curves and durations
+- **Gradients**: Beautiful gradient presets for backgrounds and accents
+- **Shadows**: Consistent shadow system for depth
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router
+├── components/          # Reusable components
+│   ├── ui/             # shadcn/ui components
+│   ├── theme-provider.tsx
+│   └── theme-toggle.tsx
+└── lib/                # Utilities and configurations
+
+styles/
+└── tokens.css          # Design token system
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Add components**: `npx shadcn@latest add <component>`
+- **Build**: `npm run build`
+- **Lint**: `npm run lint`
+- **Type check**: `npx tsc --noEmit`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚢 Deployment
 
-## Learn More
+### Vercel (Recommended)
+1. Push to GitHub
+2. Import project in Vercel
+3. Deploy automatically
 
-To learn more about Next.js, take a look at the following resources:
+### Other Platforms
+The app builds to static files and can be deployed anywhere:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Colors**: Update CSS variables in `styles/tokens.css`
+2. **Components**: Modify or add to `src/components/`
+3. **Animations**: Adjust motion tokens and Framer Motion configs
+4. **Theme**: Customize the theme system in `theme-provider.tsx`
 
-## Deploy on Vercel
+## 📦 Adding Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Common additions to the CloneMe stack:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Database**: Add Prisma + PostgreSQL/Supabase
+- **Auth**: Implement NextAuth.js or Clerk
+- **Forms**: Add React Hook Form + Zod validation
+- **State**: Include Zustand or Redux Toolkit
+- **Testing**: Jest + Testing Library
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+MIT License - feel free to use this template for your projects!
+
+---
+
+**Ready to build something amazing?** 🚀
+
+This template gives you everything you need to start building modern web applications with confidence.

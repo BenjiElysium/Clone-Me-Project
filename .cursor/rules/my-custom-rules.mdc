@@ -1,0 +1,34 @@
+---
+alwaysApply: false
+---
+# Cursor Rules — CloneMe
+
+## Architecture
+- Use Next.js App Router with Server Components by default.
+- Only add `'use client'` for interactive UI.
+
+## Styling
+- Use Tailwind utilities.
+- All colors, spacing, radii, shadows, and motion values come from tokens in `styles/tokens.css`.
+- Avoid hardcoded styles.
+
+## Motion
+- Use Framer Motion for interactions and transitions.
+- Motion tokens (`--dur-*`, `--ease`) must drive durations/easing.
+- Respect `prefers-reduced-motion`.
+
+## Validation
+- Use Zod to validate external data.
+- Infer types from Zod schemas whenever possible.
+
+## Components
+- Favor shadcn/ui primitives (Button, Card, Slider, Popover, etc.).
+- Keep components small, composable, and accessible.
+
+## Accessibility
+- Always add `alt` text to images (or `alt=""` if decorative).
+- Ensure keyboard focus and navigation works.
+- Provide captions or transcripts for audio/video.
+
+## Text
+- Avoid apostrophes in text strings; use proper Unicode characters or alternatives.

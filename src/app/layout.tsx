@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +26,52 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {/* Minimal Header */}
+          <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border/50">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+              <nav className="flex items-center gap-8">
+                <Link 
+                  href="/" 
+                  className="font-semibold text-foreground hover:text-primary transition-colors"
+                  style={{ 
+                    fontSize: "var(--s1)",
+                    transitionDuration: "var(--dur-1)",
+                    transitionTimingFunction: "var(--ease)"
+                  }}
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  style={{ 
+                    fontSize: "var(--s0)",
+                    transitionDuration: "var(--dur-1)",
+                    transitionTimingFunction: "var(--ease)"
+                  }}
+                >
+                  About
+                </Link>
+              </nav>
+              <ThemeToggle />
+            </div>
+          </header>
+          
+          {/* Main Content */}
+          <main className="pt-20">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
