@@ -36,28 +36,37 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {/* Minimal Header */}
-          <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border/50">
+          {/* Header stays fixed */}
+          <header
+            className={`
+              fixed top-0 left-0 right-0 z-40 
+              backdrop-blur-sm border-b border-border/50
+              transition-colors duration-300
+            `}
+            style={{
+              background: "var(--gradient-primary)",
+            }}
+          >
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
               <nav className="flex items-center gap-8">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="font-semibold text-foreground hover:text-primary transition-colors"
-                  style={{ 
+                  style={{
                     fontSize: "var(--s1)",
                     transitionDuration: "var(--dur-1)",
-                    transitionTimingFunction: "var(--ease)"
+                    transitionTimingFunction: "var(--ease)",
                   }}
                 >
                   Home
                 </Link>
-                <Link 
-                  href="/about" 
+                <Link
+                  href="/about"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  style={{ 
+                  style={{
                     fontSize: "var(--s0)",
                     transitionDuration: "var(--dur-1)",
-                    transitionTimingFunction: "var(--ease)"
+                    transitionTimingFunction: "var(--ease)",
                   }}
                 >
                   About
@@ -66,9 +75,9 @@ export default function RootLayout({
               <ThemeToggle />
             </div>
           </header>
-          
-          {/* Main Content */}
-          <main className="pt-20">
+
+          {/* Main content wrapper */}
+          <main className="pt-20 min-h-screen w-full">
             {children}
           </main>
         </ThemeProvider>

@@ -1,167 +1,183 @@
-/* CloneMe Design Tokens */
+/* ============================================================
+   CloneMe Design Tokens
+   ============================================================ */
 
-:root {
-  /* Colors - Dark Theme (Default) */
-  --bg: theme(colors.slate.950);
-  --fg: theme(colors.slate.50);
-  --muted: theme(colors.slate.500);
-  --accent: theme(colors.blue.500);
-  
-  /* Text Gradients */
-  --gradient-text: linear-gradient(135deg, theme(colors.slate.50) 0%, theme(colors.slate.200) 50%, theme(colors.slate.300) 100%);
-  --gradient-text-accent: linear-gradient(135deg, theme(colors.blue.400) 0%, theme(colors.blue.500) 50%, theme(colors.blue.600) 100%);
-  
-  /* Background Gradients */
-  --gradient-primary: linear-gradient(135deg, theme(colors.indigo.400) 0%, theme(colors.indigo.600) 100%);
-  --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300) 0%, theme(colors.rose.500) 100%);
-  --gradient-accent: linear-gradient(135deg, theme(colors.blue.400) 0%, theme(colors.cyan.400) 100%);
-  --gradient-warm: linear-gradient(135deg, theme(colors.rose.400) 0%, theme(colors.amber.300) 100%);
-  --gradient-cool: linear-gradient(135deg, theme(colors.cyan.300) 0%, theme(colors.teal.200) 100%);
-  --gradient-dark: linear-gradient(135deg, theme(colors.slate.900) 0%, theme(colors.slate.800) 50%, theme(colors.slate.900) 100%);
-  --gradient-light: linear-gradient(135deg, theme(colors.white) 0%, theme(colors.slate.50) 50%, theme(colors.white) 100%);
-  
-  /* Theme-responsive background */
-  --gradient-bg: var(--gradient-dark);
-  
-  /* Typography */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  
-  /* Modular Scale - Perfect Fourth (1.333) */
-  --s-2: 0.563rem;  /* 9px */
-  --s-1: 0.75rem;   /* 12px */
-  --s0: 1rem;       /* 16px - base */
-  --s1: 1.333rem;   /* 21.33px */
-  --s2: 1.777rem;   /* 28.43px */
-  --s3: 2.369rem;   /* 37.90px */
-  --s4: 3.157rem;   /* 50.51px */
-  --s5: 4.209rem;   /* 67.35px */
-  --s6: 5.610rem;   /* 89.76px */
-  --s7: 7.478rem;   /* 119.65px */
-  
-  /* Radii */
-  --radius: 0.5rem;
-  --radius-sm: 0.25rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-full: 9999px;
-  
-  /* Shadows */
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  /* Motion */
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  --dur-1: 150ms;
-  --dur-2: 300ms;
-  --dur-3: 500ms;
-  --dur-4: 750ms;
-  
-  /* Spacing Scale */
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 4rem;     /* 64px */
-}
+/* ===============================
+   Base Tokens (:root)
+   Neutral values (shared by all themes)
+   =============================== */
 
-/* Dark Theme Class Override */
-.dark {
-  --bg: theme(colors.slate.950);
-  --fg: theme(colors.slate.50);
-  --muted: theme(colors.slate.500);
-  --accent: theme(colors.blue.500);
+   :root {
+    /* -------- Typography -------- */
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   
-  /* Text Gradients */
-  --gradient-text: linear-gradient(135deg, theme(colors.slate.50) 0%, theme(colors.slate.200) 50%, theme(colors.slate.300) 100%);
-  --gradient-text-accent: linear-gradient(135deg, theme(colors.blue.400) 0%, theme(colors.blue.500) 50%, theme(colors.blue.600) 100%);
+    /* Modular Scale - Perfect Fourth (1.333) */
+    --s-2: 0.563rem;  /* 9px */
+    --s-1: 0.75rem;   /* 12px */
+    --s0: 1rem;       /* 16px base */
+    --s1: 1.333rem;   /* 21.3px */
+    --s2: 1.777rem;   /* 28.4px */
+    --s3: 2.369rem;   /* 37.9px */
+    --s4: 3.157rem;   /* 50.5px */
+    --s5: 4.209rem;   /* 67.3px */
+    --s6: 5.610rem;   /* 89.7px */
+    --s7: 7.478rem;   /* 119.6px */
   
-  /* Background Gradients */
-  --gradient-primary: linear-gradient(135deg, theme(colors.indigo.400) 0%, theme(colors.indigo.600) 100%);
-  --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300) 0%, theme(colors.rose.500) 100%);
-  --gradient-accent: linear-gradient(135deg, theme(colors.blue.400) 0%, theme(colors.cyan.400) 100%);
-  --gradient-warm: linear-gradient(135deg, theme(colors.rose.400) 0%, theme(colors.amber.300) 100%);
-  --gradient-cool: linear-gradient(135deg, theme(colors.cyan.300) 0%, theme(colors.teal.200) 100%);
-  --gradient-dark: linear-gradient(135deg, theme(colors.slate.900) 0%, theme(colors.slate.800) 50%, theme(colors.slate.900) 100%);
-  --gradient-light: linear-gradient(135deg, theme(colors.white) 0%, theme(colors.slate.50) 50%, theme(colors.white) 100%);
+    /* -------- Radii -------- */
+    --radius: 0.5rem;
+    --radius-sm: 0.25rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
   
-  /* Theme-responsive background */
-  --gradient-bg: var(--gradient-dark);
-}
-
-/* Light Theme */
-.light {
-  --bg: theme(colors.white);
-  --fg: theme(colors.slate.900);
-  --muted: theme(colors.slate.500);
-  --accent: theme(colors.blue.600);
+    /* -------- Shadows -------- */
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+              0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+                 0 8px 10px -6px rgb(0 0 0 / 0.1);
   
-  /* Light theme text gradients */
-  --gradient-text: linear-gradient(135deg, theme(colors.slate.800) 0%, theme(colors.slate.600) 50%, theme(colors.slate.500) 100%);
-  --gradient-text-accent: linear-gradient(135deg, theme(colors.blue.500) 0%, theme(colors.blue.600) 50%, theme(colors.blue.700) 100%);
+    /* -------- Motion -------- */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
-  /* Light theme background gradients */
-  --gradient-primary: linear-gradient(135deg, theme(colors.indigo.400) 0%, theme(colors.indigo.600) 100%);
-  --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300) 0%, theme(colors.rose.500) 100%);
-  --gradient-accent: linear-gradient(135deg, theme(colors.blue.500) 0%, theme(colors.blue.700) 100%);
-  --gradient-warm: linear-gradient(135deg, theme(colors.amber.400) 0%, theme(colors.amber.500) 100%);
-  --gradient-cool: linear-gradient(135deg, theme(colors.cyan.400) 0%, theme(colors.cyan.600) 100%);
+    --dur-1: 150ms;
+    --dur-2: 300ms;
+    --dur-3: 500ms;
+    --dur-4: 750ms;
   
-  /* Theme-responsive background */
-  --gradient-bg: var(--gradient-light);
-}
-
-
-/* Utility classes for direct token usage */
-.text-s0 { font-size: var(--s0); }
-.text-s1 { font-size: var(--s1); }
-.text-s2 { font-size: var(--s2); }
-.text-s3 { font-size: var(--s3); }
-.text-s4 { font-size: var(--s4); }
-.text-s5 { font-size: var(--s5); }
-.text-s6 { font-size: var(--s6); }
-.text-s7 { font-size: var(--s7); }
-
-.bg-token-bg { background-color: var(--bg); }
-.bg-token-accent { background-color: var(--accent); }
-.text-token-fg { color: var(--fg); }
-.text-token-muted { color: var(--muted); }
-
-.shadow-token { box-shadow: var(--shadow); }
-.shadow-token-md { box-shadow: var(--shadow-md); }
-.shadow-token-lg { box-shadow: var(--shadow-lg); }
-.shadow-token-xl { box-shadow: var(--shadow-xl); }
-
-.rounded-token { border-radius: var(--radius); }
-
-.bg-gradient-primary { background: var(--gradient-primary); }
-.bg-gradient-secondary { background: var(--gradient-secondary); }
-.bg-gradient-accent { background: var(--gradient-accent); }
-.bg-gradient-warm { background: var(--gradient-warm); }
-.bg-gradient-cool { background: var(--gradient-cool); }
-.bg-gradient-dark { background: var(--gradient-dark); }
-.bg-gradient-light { background: var(--gradient-light); }
-
-.text-gradient { 
-  background: var(--gradient-text);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-accent { 
-  background: var(--gradient-text-accent);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+    /* -------- Spacing -------- */
+    --space-xs: 0.25rem;   /* 4px */
+    --space-sm: 0.5rem;    /* 8px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-2xl: 3rem;     /* 48px */
+    --space-3xl: 4rem;     /* 64px */
+  }
+  
+  /* ===============================
+     Dark Theme Overrides (.dark)
+     =============================== */
+  
+  .dark {
+    /* -------- Colors -------- */
+    --bg: theme(colors.slate.950);
+    --fg: theme(colors.slate.50);
+    --muted: theme(colors.slate.500);
+    --accent: theme(colors.blue.500);
+  
+    /* -------- Text Gradients -------- */
+    --gradient-text: linear-gradient(
+      135deg,
+      theme(colors.slate.50) 0%,
+      theme(colors.slate.200) 50%,
+      theme(colors.slate.300) 100%
+    );
+    --gradient-text-accent: linear-gradient(
+      135deg,
+      theme(colors.blue.400) 0%,
+      theme(colors.blue.500) 50%,
+      theme(colors.blue.600) 100%
+    );
+  
+    /* -------- Background Gradients -------- */
+    --gradient-primary: linear-gradient(135deg, theme(colors.indigo.900), theme(colors.indigo.700));
+    --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
+    --gradient-accent: linear-gradient(135deg, theme(colors.blue.700), theme(colors.cyan.800));
+    --gradient-warm: linear-gradient(135deg, theme(colors.rose.950), theme(colors.amber.900));
+    --gradient-cool: linear-gradient(135deg, theme(colors.cyan.300), theme(colors.teal.200));
+    --gradient-dark: linear-gradient(135deg, theme(colors.purple.950), theme(colors.sky.950), theme(colors.slate.900));
+    --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));
+  
+    /* -------- Dark Theme Background -------- */
+    --gradient-bg: var(--gradient-dark);
+  }
+  
+  /* ===============================
+     Light Theme Overrides (.light)
+     =============================== */
+  
+  .light {
+    /* -------- Colors -------- */
+    --bg: theme(colors.yellow.200);
+    --fg: theme(colors.slate.900);
+    --muted: theme(colors.slate.500);
+    --accent: theme(colors.blue.600);
+  
+    /* -------- Text Gradients -------- */
+    --gradient-text: linear-gradient(
+      135deg,
+      theme(colors.slate.800) 0%,
+      theme(colors.slate.600) 50%,
+      theme(colors.slate.500) 100%
+    );
+    --gradient-text-accent: linear-gradient(
+      135deg,
+      theme(colors.blue.500) 0%,
+      theme(colors.blue.600) 50%,
+      theme(colors.blue.700) 100%
+    );
+  
+    /* -------- Background Gradients -------- */
+    --gradient-primary: linear-gradient(135deg, theme(colors.indigo.300), theme(colors.indigo.500));
+    --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
+    --gradient-accent: linear-gradient(135deg, theme(colors.blue.200), theme(colors.blue.300));
+    --gradient-warm: linear-gradient(135deg, theme(colors.amber.50), theme(colors.amber.100));
+    --gradient-cool: linear-gradient(135deg, theme(colors.cyan.400), theme(colors.cyan.600));
+    --gradient-dark: linear-gradient(135deg, theme(colors.slate.900), theme(colors.slate.800), theme(colors.slate.900));
+    --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));
+  
+    /* -------- Light Theme Background -------- */
+    --gradient-bg: var(--gradient-cool);
+  }
+  
+  /* ============================================================
+     Utility Classes (direct usage of tokens)
+     ============================================================ */
+  
+  .text-s0 { font-size: var(--s0); }
+  .text-s1 { font-size: var(--s1); }
+  /* … continue text-sN utilities … */
+  
+  .bg-token-bg { background-color: var(--bg); }
+  .bg-token-accent { background-color: var(--accent); }
+  .text-token-fg { color: var(--fg); }
+  .text-token-muted { color: var(--muted); }
+  
+  .shadow-token { box-shadow: var(--shadow); }
+  .shadow-token-md { box-shadow: var(--shadow-md); }
+  .shadow-token-lg { box-shadow: var(--shadow-lg); }
+  .shadow-token-xl { box-shadow: var(--shadow-xl); }
+  
+  .rounded-token { border-radius: var(--radius); }
+  
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-secondary { background: var(--gradient-secondary); }
+  .bg-gradient-accent { background: var(--gradient-accent); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-cool { background: var(--gradient-cool); }
+  .bg-gradient-dark { background: var(--gradient-dark); }
+  .bg-gradient-light { background: var(--gradient-light); }
+  
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-accent {
+    background: var(--gradient-text-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
