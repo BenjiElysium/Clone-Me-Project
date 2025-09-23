@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { HeroThemeProvider } from "@/contexts/hero-theme-context";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { HeaderWrapper } from "@/components/header-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,50 +38,14 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {/* Header stays fixed */}
-          <header
-            className={`
-              fixed top-0 left-0 right-0 z-40 
-              backdrop-blur-sm border-b border-border/50
-              transition-colors duration-300
-            `}
-            style={{
-              background: "var(--gradient-primary)",
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-              <nav className="flex items-center gap-8">
-                <Link
-                  href="/"
-                  className="font-semibold text-foreground hover:text-primary transition-colors"
-                  style={{
-                    fontSize: "var(--s1)",
-                    transitionDuration: "var(--dur-1)",
-                    transitionTimingFunction: "var(--ease)",
-                  }}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  style={{
-                    fontSize: "var(--s1)",
-                    transitionDuration: "var(--dur-1)",
-                    transitionTimingFunction: "var(--ease)",
-                  }}
-                >
-                  About
-                </Link>
-              </nav>
-              <ThemeToggle />
-            </div>
-          </header>
-
-          {/* Main content wrapper */}
-          <main className="pt-20 min-h-screen w-full">
-            {children}
-          </main>
+          <HeroThemeProvider>
+            <HeaderWrapper />
+            
+            {/* Main content wrapper */}
+            <main className="pt-20 min-h-screen w-full">
+              {children}
+            </main>
+          </HeroThemeProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -131,7 +131,7 @@
     --gradient-primary: linear-gradient(135deg, theme(colors.indigo.300), theme(colors.indigo.500));
     --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
     --gradient-accent: linear-gradient(135deg, theme(colors.blue.200), theme(colors.blue.300));
-    --gradient-warm: linear-gradient(135deg, theme(colors.amber.50), theme(colors.amber.100));
+    --gradient-warm: linear-gradient(135deg, theme(colors.amber.500), theme(colors.amber.300));
     --gradient-cool: linear-gradient(135deg, theme(colors.cyan.400), theme(colors.cyan.600));
     --gradient-dark: linear-gradient(135deg, theme(colors.slate.900), theme(colors.slate.800), theme(colors.slate.900));
     --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));

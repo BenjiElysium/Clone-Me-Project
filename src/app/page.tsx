@@ -3,17 +3,13 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useHeroTheme } from "@/contexts/hero-theme-context";
 
 export default function Home() {
-  const { theme } = useTheme();
-  const [activeTheme, setActiveTheme] = useState<string>('primary');
+  const { activeTheme, setActiveTheme } = useHeroTheme();
 
   const handleThemeSwitch = (themeType: 'primary' | 'accent' | 'warm') => {
     setActiveTheme(themeType);
-    // Don't change the light/dark mode - just track the hero theme selection
-    // The background will update based on activeTheme while preserving light/dark mode
   };
 
   return (
@@ -349,7 +345,7 @@ export default function Home() {
                         width: ["0%", "100%", "0%"] 
                       }}
                       transition={{ 
-                        duration: 3,
+                        duration: 6,
                         repeat: Infinity,
                         ease: "linear",
                         delay: 0.2
@@ -368,7 +364,7 @@ export default function Home() {
                         width: ["0%", "100%", "0%"] 
                       }}
                       transition={{ 
-                        duration: 3,
+                        duration: 6,
                         repeat: Infinity,
                         ease: "easeOut",
                         delay: 0.4
@@ -387,7 +383,7 @@ export default function Home() {
                         width: ["0%", "100%", "0%"] 
                       }}
                       transition={{ 
-                        duration: 3,
+                        duration: 6,
                         repeat: Infinity,
                         ease: [0.175, 0.885, 0.32, 1.275],
                         delay: 0.6
@@ -462,8 +458,28 @@ export default function Home() {
               transition: { duration: 0.2 }
             }}
           >
-            <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/80 border-border/50 overflow-hidden relative group">
-              <div className={`absolute inset-0 ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+            <div className="relative h-full group">
+              {/* Gradient border background */}
+              <motion.div 
+                className="absolute inset-0 rounded-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"
+                animate={{
+                  background: activeTheme === 'primary' 
+                    ? "var(--gradient-primary)" 
+                    : activeTheme === 'accent' 
+                    ? "var(--gradient-accent)" 
+                    : activeTheme === 'warm' 
+                    ? "var(--gradient-warm)" 
+                    : "var(--gradient-primary)"
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              {/* Main card with inset positioning to create border effect */}
+              <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/90 border-0 overflow-hidden relative m-0.5 rounded-[10px]">
+                <div className={`absolute inset-0 ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
               <CardHeader className="relative z-10">
                 <motion.div 
                   className="text-4xl mb-2"
@@ -490,6 +506,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
+            </div>
           </motion.div>
         ))}
       </motion.div>
