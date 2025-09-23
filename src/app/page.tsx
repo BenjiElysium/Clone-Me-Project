@@ -221,7 +221,7 @@ export default function Home() {
           whileHover={{ scale: 1.02, y: -5 }}
         >
           <Card className="bg-gradient-accent text-white shadow-token-xl border-0 overflow-hidden relative h-80 w-full flex flex-col">
-            <div className="absolute inset-0 bg-black/10" />
+            <div className="absolute inset-0 bg-card/10" />
             
             {/* Enhanced Circle Animation */}
             <div className="absolute inset-0 flex items-center justify-center">

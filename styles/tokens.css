@@ -114,8 +114,8 @@
     /* -------- Background Gradients -------- */
     --gradient-primary: linear-gradient(135deg, theme(colors.indigo.900), theme(colors.indigo.700));
     --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
-    --gradient-accent: linear-gradient(135deg, theme(colors.blue.700), theme(colors.cyan.800));
-    --gradient-warm: linear-gradient(135deg, theme(colors.rose.950), theme(colors.amber.900));
+    --gradient-accent: linear-gradient(135deg, theme(colors.blue.800), theme(colors.cyan.900));
+    --gradient-warm: linear-gradient(135deg, hsla(35, 82%, 59%, 0.2), hsl(10, 63%, 30%, 0.8));
     --gradient-cool: linear-gradient(135deg, theme(colors.cyan.300), theme(colors.teal.200));
     --gradient-dark: linear-gradient(135deg, theme(colors.purple.950), theme(colors.sky.950), theme(colors.slate.900));
     --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));
@@ -175,7 +175,7 @@
     --gradient-primary: linear-gradient(135deg, theme(colors.indigo.300), theme(colors.indigo.500));
     --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
     --gradient-accent: linear-gradient(135deg, theme(colors.blue.300), theme(colors.blue.400));
-    --gradient-warm: linear-gradient(135deg, theme(colors.amber.300), theme(colors.amber.500));
+    --gradient-warm: linear-gradient(135deg,hsla(42, 89%, 78%, 0.6), hsla(15, 72%, 75%, 0.8));
     --gradient-cool: linear-gradient(135deg, theme(colors.cyan.400), theme(colors.cyan.600));
     --gradient-dark: linear-gradient(135deg, theme(colors.slate.900), theme(colors.slate.800), theme(colors.slate.900));
     --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));
