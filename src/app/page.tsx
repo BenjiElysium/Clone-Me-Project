@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AuroraText } from "@/components/ui/aurora-text";
 import { useHeroTheme } from "@/contexts/hero-theme-context";
 
 export default function Home() {
@@ -85,10 +86,13 @@ export default function Home() {
         className="text-center space-y-4"
       >
         <h1 
-          className="font-bold leading-tight text-gradient"
+          className="font-bold leading-tight"
           style={{ fontSize: "var(--s5)" }} // 67.35px
         >
-          CloneMe Stack Demo
+          <AuroraText speed={1.2}>
+            CloneMe
+          </AuroraText>{" "}
+          <span className="text-gradient">Stack Demo</span>
         </h1>
         <p 
           className="text-foreground/70 max-w-2xl mx-auto"
