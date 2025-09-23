@@ -469,19 +469,19 @@ export default function Home() {
               <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/90 border-0 relative rounded-xl overflow-hidden">
                 
                 {/* Shine Border wrapped in -inset-px to avoid seams */}
-                <div className="absolute -inset-px rounded-xl pointer-events-none">
-                  <ShineBorder
-                    shineColor={
-                      index === 0 
-                        ? ["var(--shine-tokens-1)", "var(--shine-tokens-2)", "var(--shine-tokens-3)"] // Design Tokens
-                        : index === 1 
-                        ? ["var(--shine-tailwind-1)", "var(--shine-tailwind-2)", "var(--shine-tailwind-3)"] // Tailwind Integration
-                        : ["var(--shine-motion-1)", "var(--shine-motion-2)", "var(--shine-motion-3)"] // Motion System
-                    }
-                    duration={12 + index * 2}
-                    borderWidth={2}
-                  />
-                </div>
+                <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none bg-inherit">
+                <ShineBorder
+                  shineColor={
+                    index === 0 
+                      ? ["var(--shine-tokens-1)", "var(--shine-tokens-2)", "var(--shine-tokens-3)"]
+                      : index === 1 
+                      ? ["var(--shine-tailwind-1)", "var(--shine-tailwind-2)", "var(--shine-tailwind-3)"]
+                      : ["var(--shine-motion-1)", "var(--shine-motion-2)", "var(--shine-motion-3)"]
+                  }
+                  duration={12 + index * 2}
+                  borderWidth={1}
+                />
+              </div>
 
                 {/* Gradient overlay on hover */}
                 <div 
@@ -528,12 +528,12 @@ export default function Home() {
           ease: [0.4, 0, 0.2, 1],
           delay: 1.0 
         }}
-        className="mt-16 text-center"
+        className="mt-0 text-center"
       >
-        <div className="backdrop-blur-sm bg-card/30 rounded-full px-6 py-3 border border-border/30">
+        <div className="backdrop-blur-sm bg-card/30 rounded-full px-6 py-2 border border-border/40">
           <p 
             className="text-muted-foreground"
-            style={{ fontSize: "var(--s0)" }}
+            style={{ fontSize: "var(--s-1)" }}
           >
             Built with the <span className="text-primary font-semibold">CloneMe</span> stack • Ready for your next project ✨
           </p>
