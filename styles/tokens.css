@@ -174,8 +174,8 @@
     /* -------- Background Gradients -------- */
     --gradient-primary: linear-gradient(135deg, theme(colors.indigo.300), theme(colors.indigo.500));
     --gradient-secondary: linear-gradient(135deg, theme(colors.pink.300), theme(colors.rose.500));
-    --gradient-accent: linear-gradient(135deg, theme(colors.blue.200), theme(colors.blue.300));
-    --gradient-warm: linear-gradient(135deg, theme(colors.amber.500), theme(colors.amber.300));
+    --gradient-accent: linear-gradient(135deg, theme(colors.blue.300), theme(colors.blue.400));
+    --gradient-warm: linear-gradient(135deg, theme(colors.amber.300), theme(colors.amber.500));
     --gradient-cool: linear-gradient(135deg, theme(colors.cyan.400), theme(colors.cyan.600));
     --gradient-dark: linear-gradient(135deg, theme(colors.slate.900), theme(colors.slate.800), theme(colors.slate.900));
     --gradient-light: linear-gradient(135deg, theme(colors.yellow.200), theme(colors.slate.50), theme(colors.sky.200));
@@ -191,19 +191,19 @@
 
     /* -------- Shine Border Colors (Light Theme) -------- */
     /* Design Tokens Set - Adjusted for light theme */
-    --shine-tokens-1: rgba(140, 104, 234, 0.8);  /* Deeper Purple */
-    --shine-tokens-2: rgba(234, 123, 161, 0.9);  /* Deeper Pink */
-    --shine-tokens-3: rgba(235, 170, 103, 1);    /* Deeper Orange */
+    --shine-tokens-1: rgba(98, 47, 228, 0.8);  /* Deeper Purple */
+    --shine-tokens-2: rgba(214, 44, 104, 0.9);  /* Deeper Pink */
+    --shine-tokens-3: rgb(225, 132, 38);    /* Deeper Orange */
 
     /* Tailwind Integration Set - Adjusted for light theme */
-    --shine-tailwind-1: rgba(0, 192, 235, 0.9);  /* Deeper Cyan */
-    --shine-tailwind-2: rgb(134, 73, 225);      /* Darker Deep Blue */
-    --shine-tailwind-3: rgba(0, 192, 235, 0.8);  /* Deeper Cyan (repeat) */
+    --shine-tailwind-1: rgba(4, 126, 153, 0.9);  /* Deeper Cyan */
+    --shine-tailwind-2: rgb(92, 38, 171);      /* Darker Deep Blue */
+    --shine-tailwind-3: rgba(0, 123, 151, 0.8);  /* Deeper Cyan (repeat) */
 
     /* Motion System Set - Adjusted for light theme */
-    --shine-motion-1: rgba(235, 159, 51, 0.9);   /* Deeper Warm Orange */
-    --shine-motion-2: rgba(235, 87, 87, 1);      /* Deeper Coral Red */
-    --shine-motion-3: rgba(58, 185, 176, 0.8);   /* Deeper Teal */
+    --shine-motion-1: rgba(220, 139, 25, 0.9);   /* Deeper Warm Orange */
+    --shine-motion-2: rgb(224, 51, 51);      /* Deeper Coral Red */
+    --shine-motion-3: rgba(18, 121, 114, 0.8);   /* Deeper Teal */
   }
   
   /* ============================================================

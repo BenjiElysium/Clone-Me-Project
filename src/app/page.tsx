@@ -466,7 +466,7 @@ export default function Home() {
           >
             <div className="relative h-full group overflow-hidden rounded-xl">
               {/* Main card with shine border */}
-              <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/90 border-0 relative rounded-xl overflow-hidden">
+              <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-background/20 border-0 relative rounded-xl overflow-hidden">
                 
                 {/* Shine Border wrapped in -inset-px to avoid seams */}
                 <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none bg-inherit">
