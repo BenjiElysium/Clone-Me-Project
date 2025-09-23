@@ -3,16 +3,37 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { theme } = useTheme();
+  const [activeTheme, setActiveTheme] = useState<string>('primary');
+
+  const handleThemeSwitch = (themeType: 'primary' | 'accent' | 'warm') => {
+    setActiveTheme(themeType);
+    // Don't change the light/dark mode - just track the hero theme selection
+    // The background will update based on activeTheme while preserving light/dark mode
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10">
-        <div 
+        <motion.div 
           className="absolute inset-0"
-          style={{
-            background: "var(--gradient-bg)"
+          animate={{
+            background: activeTheme === 'primary' 
+              ? "var(--gradient-primary)" 
+              : activeTheme === 'accent' 
+              ? "var(--gradient-accent)" 
+              : activeTheme === 'warm' 
+              ? "var(--gradient-warm)" 
+              : "var(--gradient-bg)"
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut"
           }}
         />
         <motion.div
@@ -105,19 +126,75 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-primary dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-primary text-white shadow-token-xl border-0 overflow-hidden relative h-80 w-full flex flex-col">
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+            
+            {/* Floating Particles Animation */}
+            <div className="absolute inset-0">
+              {Array.from({ length: 8 }, (_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-3 h-3 bg-white/20 rounded-full"
+                  style={{
+                    left: `${20 + (i * 8)}%`,
+                    top: `${30 + (i % 3) * 20}%`,
+                  }}
+                  animate={{
+                    y: [-10, 10, -10],
+                    x: [-5, 5, -5],
+                    scale: [0.8, 1.2, 0.8],
+                    opacity: [0.3, 0.8, 0.3],
+                  }}
+                  transition={{
+                    duration: 3 + (i * 0.5),
+                    delay: i * 0.3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+              ))}
+              
+              {/* Wave Lines */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex gap-1">
+                  {Array.from({ length: 46 }, (_, i) => (
+                    <motion.div
+                      key={`wave-${i}`}
+                      className="bg-white/15 rounded-full"
+                      style={{
+                        width: '3px',
+                        height: '20px',
+                      }}
+                      animate={{
+                        scaleY: [1, 2 + Math.sin(i * 0.5), 1],
+                        opacity: [0.3, 0.8, 0.3],
+                      }}
+                      transition={{
+                        duration: 2 + (i % 3) * 0.2,
+                        delay: i * 0.08,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            
             <CardHeader className="relative z-10">
               <CardTitle style={{ fontSize: "var(--s2)" }}>
                 Primary Theme
               </CardTitle>
-              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
+              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
                 Gradient backgrounds with token integration
               </CardDescription>
             </CardHeader>
-            <CardContent className="relative z-10">
+            <CardContent className="relative z-10 flex flex-col justify-end flex-1">
               <Button 
-                className="w-full bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm"
+                onClick={() => handleThemeSwitch('primary')}
+                className={`w-full bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm transition-all ${
+                  activeTheme === 'primary' ? 'ring-2 ring-white/50' : ''
+                }`}
                 variant="outline"
                 style={{ 
                   borderRadius: "var(--radius)",
@@ -125,7 +202,7 @@ export default function Home() {
                   transitionTimingFunction: "var(--ease)"
                 }}
               >
-                Explore Primary
+                {activeTheme === 'primary' ? '✓ Active' : 'Explore Primary'}
               </Button>
             </CardContent>
           </Card>
@@ -142,42 +219,85 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-accent dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-accent text-white shadow-token-xl border-0 overflow-hidden relative h-80 w-full flex flex-col">
             <div className="absolute inset-0 bg-black/10" />
-            <CardHeader className="relative z-10">
-              <CardTitle style={{ fontSize: "var(--s2)" }}>
-                Accent Theme
-              </CardTitle>
-              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
-                Cool blues with smooth animations
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="relative z-10 space-y-3">
-              <div className="flex gap-2">
-                {Array.from({ length: 3 }, (_, i) => (
+            
+            {/* Enhanced Circle Animation */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative">
+                {/* Main circles with varied scales */}
+                {Array.from({ length: 7 }, (_, i) => (
                   <motion.div
                     key={i}
-                    className="w-6 h-6 bg-white/30 rounded-full"
+                    className="absolute bg-white/30 rounded-full"
+                    style={{
+                      width: `${12 + (i % 3) * 8}px`,
+                      height: `${12 + (i % 3) * 8}px`,
+                      left: `${(i * 25) - 75}px`,
+                      top: `${Math.sin(i) * 20}px`,
+                    }}
                     animate={{
-                      scale: [1, 1.2, 1],
+                      scale: [0.5, 1.8, 0.5],
+                      opacity: [0.2, 0.9, 0.2],
+                      y: [0, -15, 0],
                     }}
                     transition={{
-                      duration: 2,
-                      delay: i * 0.2,
+                      duration: 2.5 + (i * 0.3),
+                      delay: i * 0.15,
                       repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
+                
+                {/* Ripple effect circles */}
+                {Array.from({ length: 4 }, (_, i) => (
+                  <motion.div
+                    key={`ripple-${i}`}
+                    className="absolute border-2 border-white/20 rounded-full"
+                    style={{
+                      width: `${40 + i * 20}px`,
+                      height: `${40 + i * 20}px`,
+                      left: `-${20 + i * 10}px`,
+                      top: `-${20 + i * 10}px`,
+                    }}
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.1, 0.4, 0.1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      delay: i * 0.5,
+                      repeat: Infinity,
+                      ease: "easeOut",
                     }}
                   />
                 ))}
               </div>
+            </div>
+            
+            <CardHeader className="relative z-10">
+              <CardTitle style={{ fontSize: "var(--s2)" }}>
+                Accent Theme
+              </CardTitle>
+              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
+                Cool blues with smooth animations
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="relative z-10 flex flex-col justify-end flex-1">
               <Button 
-                className="w-full bg-white text-blue-600 hover:bg-white/90"
+                onClick={() => handleThemeSwitch('accent')}
+                className={`w-full bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm transition-all ${
+                  activeTheme === 'accent' ? 'ring-2 ring-white/50' : ''
+                }`}
+                variant="outline"
                 style={{ 
                   borderRadius: "var(--radius)",
-                  transitionDuration: "var(--dur-1)",
+                  transitionDuration: "var(--dur-2)",
                   transitionTimingFunction: "var(--ease)"
                 }}
               >
-                Try Accent
+                {activeTheme === 'accent' ? '✓ Active' : 'Try Accent'}
               </Button>
             </CardContent>
           </Card>
@@ -194,7 +314,7 @@ export default function Home() {
           }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <Card className="bg-gradient-warm dark:text-white text-black/80 shadow-token-xl border-0 overflow-hidden relative">
+          <Card className="bg-gradient-warm text-white shadow-token-xl border-0 overflow-hidden relative h-80 w-full flex flex-col">
             <motion.div 
               className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"
               animate={{
@@ -210,34 +330,86 @@ export default function Home() {
               <CardTitle style={{ fontSize: "var(--s2)" }}>
                 Warm Theme
               </CardTitle>
-              <CardDescription className="dark:text-white/90 text-black/90" style={{ fontSize: "var(--s0)" }}>
+              <CardDescription className="text-white/90" style={{ fontSize: "var(--s0)" }}>
                 Energetic colors with dynamic effects
               </CardDescription>
             </CardHeader>
-            <CardContent className="relative z-10">
-              <div className="mb-4">
-                <motion.div 
-                  className="h-2 dark:bg-white/30 bg-black/30 rounded-full overflow-hidden"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                >
-                  <motion.div 
-                    className="h-full dark:bg-white bg-black rounded-full"
-                    animate={{ x: [-20, 100, -20] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                </motion.div>
+            <CardContent className="relative z-10 space-y-4 flex flex-col justify-end flex-1">
+              {/* Multiple Stacked Progress Bars with Different Easing */}
+              <div className="space-y-2">
+                <div className="text-xs text-white/70 mb-1">Animation Curves</div>
+                
+                {/* Linear */}
+                <div className="relative">
+                  <div className="text-xs text-white/60 mb-1">Linear</div>
+                  <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-white rounded-full"
+                      animate={{ 
+                        width: ["0%", "100%", "0%"] 
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: 0.2
+                      }}
+                    />
+                  </div>
+                </div>
+                
+                {/* Ease Out */}
+                <div className="relative">
+                  <div className="text-xs text-white/60 mb-1">Ease Out</div>
+                  <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-white rounded-full"
+                      animate={{ 
+                        width: ["0%", "100%", "0%"] 
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                        delay: 0.4
+                      }}
+                    />
+                  </div>
+                </div>
+                
+                {/* Spring */}
+                <div className="relative">
+                  <div className="text-xs text-white/60 mb-1">Spring</div>
+                  <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-white rounded-full"
+                      animate={{ 
+                        width: ["0%", "100%", "0%"] 
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: [0.175, 0.885, 0.32, 1.275],
+                        delay: 0.6
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
+              
               <Button 
-                className="w-full bg-white text-orange-600 hover:bg-white/90"
+                onClick={() => handleThemeSwitch('warm')}
+                className={`w-full bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm transition-all ${
+                  activeTheme === 'warm' ? 'ring-2 ring-white/50' : ''
+                }`}
+                variant="outline"
                 style={{ 
                   borderRadius: "var(--radius)",
-                  transitionDuration: "var(--dur-1)",
+                  transitionDuration: "var(--dur-2)",
                   transitionTimingFunction: "var(--ease)"
                 }}
               >
-                Feel the Warmth
+                {activeTheme === 'warm' ? '✓ Active' : 'Feel the Warmth'}
               </Button>
             </CardContent>
           </Card>
