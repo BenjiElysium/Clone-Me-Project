@@ -68,6 +68,22 @@
     --aurora-2: rgba(121, 40, 202, 1);
     --aurora-3: rgba(0, 112, 243, 0.8);
     --aurora-4: rgba(56, 189, 248, 1);
+
+    /* -------- Shine Border Colors -------- */
+    /* Design Tokens Set - Purple to Pink to Orange */
+    --shine-tokens-1: rgba(160, 124, 254, 0.8);  /* Purple */
+    --shine-tokens-2: rgba(254, 143, 181, 0.9);  /* Pink */
+    --shine-tokens-3: rgba(255, 190, 123, 1);    /* Orange */
+
+    /* Tailwind Integration Set - Blue gradient */
+    --shine-tailwind-1: rgba(0, 212, 255, 0.9);  /* Cyan */
+    --shine-tailwind-2: rgb(8, 55, 186);      /* Deep Blue */
+    --shine-tailwind-3: rgba(0, 212, 255, 0.8);  /* Cyan (repeat for cycle) */
+
+    /* Motion System Set - Warm to Cool */
+    --shine-motion-1: rgba(255, 179, 71, 0.9);   /* Warm Orange */
+    --shine-motion-2: rgba(255, 107, 107, 1);    /* Coral Red */
+    --shine-motion-3: rgba(78, 205, 196, 0.8);   /* Teal */
   }
   
   /* ===============================
@@ -112,6 +128,22 @@
     --aurora-2: rgba(121, 40, 202, 1);
     --aurora-3: rgba(3, 132, 224, 0.8);
     --aurora-4: rgb(56, 91, 248);
+
+    /* -------- Shine Border Colors (Dark Theme) -------- */
+    /* Design Tokens Set - Enhanced for dark theme */
+    --shine-tokens-1: rgba(180, 144, 255, 0.9);  /* Brighter Purple */
+    --shine-tokens-2: rgba(255, 163, 201, 1);    /* Brighter Pink */
+    --shine-tokens-3: rgba(255, 210, 143, 0.9);  /* Brighter Orange */
+
+    /* Tailwind Integration Set - Enhanced for dark theme */
+    --shine-tailwind-1: rgba(20, 232, 255, 1);   /* Brighter Cyan */
+    --shine-tailwind-2: rgba(29, 29, 141, 0.9);  /* Lighter Deep Blue */
+    --shine-tailwind-3: rgba(20, 232, 255, 0.8); /* Brighter Cyan (repeat) */
+
+    /* Motion System Set - Enhanced for dark theme */
+    --shine-motion-1: rgba(255, 199, 91, 1);     /* Brighter Warm Orange */
+    --shine-motion-2: rgba(255, 127, 127, 0.9);  /* Brighter Coral Red */
+    --shine-motion-3: rgba(98, 225, 216, 0.9);   /* Brighter Teal */
   }
   
   /* ===============================
@@ -156,6 +188,22 @@
     --aurora-2: rgba(79, 70, 229, 0.9);
     --aurora-3: rgba(59, 130, 246, 0.7);
     --aurora-4: rgba(14, 165, 233, 0.8);
+
+    /* -------- Shine Border Colors (Light Theme) -------- */
+    /* Design Tokens Set - Adjusted for light theme */
+    --shine-tokens-1: rgba(140, 104, 234, 0.8);  /* Deeper Purple */
+    --shine-tokens-2: rgba(234, 123, 161, 0.9);  /* Deeper Pink */
+    --shine-tokens-3: rgba(235, 170, 103, 1);    /* Deeper Orange */
+
+    /* Tailwind Integration Set - Adjusted for light theme */
+    --shine-tailwind-1: rgba(0, 192, 235, 0.9);  /* Deeper Cyan */
+    --shine-tailwind-2: rgb(134, 73, 225);      /* Darker Deep Blue */
+    --shine-tailwind-3: rgba(0, 192, 235, 0.8);  /* Deeper Cyan (repeat) */
+
+    /* Motion System Set - Adjusted for light theme */
+    --shine-motion-1: rgba(235, 159, 51, 0.9);   /* Deeper Warm Orange */
+    --shine-motion-2: rgba(235, 87, 87, 1);      /* Deeper Coral Red */
+    --shine-motion-3: rgba(58, 185, 176, 0.8);   /* Deeper Teal */
   }
   
   /* ============================================================

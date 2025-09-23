@@ -24,14 +24,21 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button 
-      variant="outline" 
+    <Button
+      variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent/10"
+      className="
+        relative
+        bg-background/5 
+        backdrop-blur-sm 
+        border border-border/50
+        hover:bg-accent/10
+        transition-colors
+      "
       style={{
         transitionDuration: "var(--dur-1)",
-        transitionTimingFunction: "var(--ease)"
+        transitionTimingFunction: "var(--ease)",
       }}
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

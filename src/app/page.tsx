@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { ShineBorder } from "@/components/ui/shine-border";
 import { useHeroTheme } from "@/contexts/hero-theme-context";
 
 export default function Home() {
@@ -449,7 +450,7 @@ export default function Home() {
         ].map((feature, index) => (
           <motion.div
             key={feature.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.3,
@@ -457,59 +458,62 @@ export default function Home() {
               delay: 0.7 + index * 0.1 
             }}
             whileHover={{ 
-              scale: 1.05, 
-              y: -10,
+              scale: 1.04, 
+              y: 1,
               transition: { duration: 0.2 }
             }}
+            className="transform-gpu will-change-transform"
           >
-            <div className="relative h-full group">
-              {/* Gradient border background */}
-              <motion.div 
-                className="absolute inset-0 rounded-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"
-                animate={{
-                  background: activeTheme === 'primary' 
-                    ? "var(--gradient-primary)" 
-                    : activeTheme === 'accent' 
-                    ? "var(--gradient-accent)" 
-                    : activeTheme === 'warm' 
-                    ? "var(--gradient-warm)" 
-                    : "var(--gradient-primary)"
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeInOut"
-                }}
-              />
-              
-              {/* Main card with inset positioning to create border effect */}
-              <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/90 border-0 overflow-hidden relative m-0.5 rounded-[10px]">
-                <div className={`absolute inset-0 ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-              <CardHeader className="relative z-10">
-                <motion.div 
-                  className="text-4xl mb-2"
-                  style={{ fontSize: "var(--s3)" }}
-                  whileHover={{ 
-                    scale: 1.2,
-                    rotate: 10,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  {feature.icon}
-                </motion.div>
-                <CardTitle 
-                  className="group-hover:text-primary transition-colors"
-                  style={{ fontSize: "var(--s2)" }}
-                >
-                  {feature.title}
-                </CardTitle>
-                <CardDescription 
-                  className="group-hover:text-foreground/80 transition-colors"
-                  style={{ fontSize: "var(--s0)" }}
-                >
-                  {feature.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <div className="relative h-full group overflow-hidden rounded-xl">
+              {/* Main card with shine border */}
+              <Card className="h-full shadow-token hover:shadow-token-xl transition-all backdrop-blur-sm bg-card/90 border-0 relative rounded-xl overflow-hidden">
+                
+                {/* Shine Border wrapped in -inset-px to avoid seams */}
+                <div className="absolute -inset-px rounded-xl pointer-events-none">
+                  <ShineBorder
+                    shineColor={
+                      index === 0 
+                        ? ["var(--shine-tokens-1)", "var(--shine-tokens-2)", "var(--shine-tokens-3)"] // Design Tokens
+                        : index === 1 
+                        ? ["var(--shine-tailwind-1)", "var(--shine-tailwind-2)", "var(--shine-tailwind-3)"] // Tailwind Integration
+                        : ["var(--shine-motion-1)", "var(--shine-motion-2)", "var(--shine-motion-3)"] // Motion System
+                    }
+                    duration={12 + index * 2}
+                    borderWidth={2}
+                  />
+                </div>
+
+                {/* Gradient overlay on hover */}
+                <div 
+                  className={`absolute inset-0 ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} 
+                />
+
+                <CardHeader className="relative z-10">
+                  <motion.div 
+                    className="text-4xl mb-2"
+                    style={{ fontSize: "var(--s3)" }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      rotate: 0,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    {feature.icon}
+                  </motion.div>
+                  <CardTitle 
+                    className="group-hover:text-primary transition-colors"
+                    style={{ fontSize: "var(--s2)" }}
+                  >
+                    {feature.title}
+                  </CardTitle>
+                  <CardDescription 
+                    className="group-hover:text-foreground/80 transition-colors"
+                    style={{ fontSize: "var(--s0)" }}
+                  >
+                    {feature.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
             </div>
           </motion.div>
         ))}
