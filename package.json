@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "description": "A modern, production-ready template with Next.js 15, Tailwind v4, TypeScript, Framer Motion, shadcn/ui, and comprehensive design tokens",
-  "keywords": ["nextjs", "tailwind", "typescript", "framer-motion", "shadcn-ui", "template", "design-tokens"],
+  "keywords": [
+    "nextjs",
+    "tailwind",
+    "typescript",
+    "framer-motion",
+    "shadcn-ui",
+    "template",
+    "design-tokens"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
@@ -27,9 +35,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "tailwindcss": "^4",
