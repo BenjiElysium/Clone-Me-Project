@@ -317,7 +317,7 @@ export default function Home() {
         >
           <Card className="bg-gradient-warm text-white shadow-token-xl border-0 overflow-hidden relative h-80 w-full flex flex-col">
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"
+              className="absolute inset-0"
               animate={{
                 opacity: [0.2, 0.4, 0.2],
               }}
